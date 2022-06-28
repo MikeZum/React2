@@ -1,16 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 
-const Item = styled.li`
-
+const List = styled.ul`
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 `;
 
-export const ListItem = (props) => (
-    <ul>
-        {props.itemList.map(item => (
-            <Item>
-                {item.name}
+const Item = styled.li`
+    width: 400px;
+    height: 155px;
+    background-image: ${(props) => `url(${props.img})`}
+`;
+
+export const ListItem = ({ itemList }) => (
+    <List>
+        {itemList.map(item => (
+            <Item
+                key={item.id}
+                img={item.img}>
+                    {item.name}
             </Item>
         ))}
-    </ul>
+    </List>
 );
