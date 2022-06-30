@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const List = styled.ul`
     display: flex;
-    justyfy-content: space-around;
+    // justyfy-content: space-around;
+    justyfy-content: space-beetwen;
     flex-wrap: wrap;
 `;
 
