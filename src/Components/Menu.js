@@ -9,16 +9,20 @@ background-color: #ccc;
 margin-top: 80px;
 `;
 
+const SectionMenu = styled.section`
+    padding: 30px;
+`;
+
 export const Menu = () => (
     <MenuStyled>
-        <section>
+        <SectionMenu>
             <h2>Бургеры</h2>
             <ListItem itemList={dbMenu.burger}/>
-        </section>
+        </SectionMenu>
 
-        <section>
+        <SectionMenu>
             <h2>Закуски / Напитки</h2>
             <ListItem itemList={dbMenu.other}/>
-        </section>
+        </SectionMenu>
     </MenuStyled>
 );
