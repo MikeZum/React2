@@ -31,7 +31,6 @@ a {
 
 ul {
   list-style: none;
-  bor
   padding: 0;
   margin: 0;
 }

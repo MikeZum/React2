@@ -29,6 +29,18 @@ background-position: center;
 margin-bottom: 20px;
 `;
 
+const Content = styled.section`
+    padding: 30px;
+`;
+
+const HeaderContent = styled.div`
+display: flex;
+justify-content: space-between;
+font-size: 24px;
+font-weight: 700;
+font-family: 'Pacifico', cursive;
+`;
+
 
 export const ModalItem = ({ openItem, setOpenItem }) => {
 
@@ -43,8 +55,13 @@ export const ModalItem = ({ openItem, setOpenItem }) => {
     <Overlay id="overlay" onClick={closeModal}>
         <Modal>
             <Banner img={openItem.img}/>
-            {openItem.name}
-            </Modal>
+            <Content>
+                <HeaderContent>
+                    <div> {openItem.name}</div>
+                    <div> {openItem.price}</div>
+                </HeaderContent>      
+            </Content>
+        </Modal>
 
     </Overlay>
     )
