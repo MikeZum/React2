@@ -3,24 +3,25 @@ import styled from "styled-components";
 
 const List = styled.ul`
     display: flex;
-    justyfy-content: space-around;
-    // justyfy-content: space-between;
+    // justyfy-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 `;
 
 const Item = styled.li`
     position: relative;
-    width: 400px;
+    max-width: 100%;
+    flex: 20%;
     height: 155px;
     background-image: ${({ img }) => `url(${img})`};
     background-position: center;
     background-size: cover;
-    margin-top: 50px;
-    margin-right: 80px;
+    margin: 48px 20px 0 20px;
     padding: 15px;
     font-size: 30px;
     color: white;
     z-index: 1;
+    transition: 0.3s ease-in-out;
     &:after { 
         content: ' ';
         position: absolute;
@@ -50,7 +51,8 @@ export const ListItem = ({ itemList, setOpenItem }) => (
                 onClick={() => setOpenItem(item)}>
                     <p>{item.name}</p>
                     <p>{item.price.toLocaleString('ru-RU',
-                    {style: 'currency', currency: 'RUB'})}</p>
+                    {style: 'currency', currency: 'RUB'})}
+                    </p>
             </Item>
         ))}
     </List>
