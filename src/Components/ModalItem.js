@@ -54,7 +54,6 @@ export const ModalItem = ({ openItem, setOpenItem }) => {
         }
     }
 
-    if(!openItem) return null;
     return (
     <Overlay id="overlay" onClick={closeModal}>
         <Modal>
