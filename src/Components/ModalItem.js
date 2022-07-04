@@ -46,12 +46,21 @@ font-family: 'Pacifico', cursive;
 `;
 
 
-export const ModalItem = ({ openItem, setOpenItem }) => {
+export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
 
-    function closeModal(e) {
+    const closeModal = e => {
         if(e.target.id === 'overlay') {
             setOpenItem(null);
         }
+    }
+
+    const order = {
+        ...openItem
+    };
+
+    const addToOrder = () => {
+        setOrders([...orders, order])
+        setOpenItem(null);
     }
 
     return (
@@ -63,7 +72,7 @@ export const ModalItem = ({ openItem, setOpenItem }) => {
                     <div> {openItem.name}</div>
                     <div> {openItem.price}</div>
                 </HeaderContent>      
-                <ButtonCheckout>Добавить</ButtonCheckout>
+                <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>
             </Content>
         </Modal>
 
