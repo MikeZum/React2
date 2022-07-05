@@ -51,7 +51,7 @@ button {
 }
 
 input, button {
-  font-family: inherit;
+  font: inherit;
 }
 
   `;

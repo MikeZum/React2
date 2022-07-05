@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ButtonCheckout } from "../Styled/ButtonCheckout";
 import { CountItem }  from "./CountItem";
+import { useCount }  from "../Hooks/useCount";
+
 
 const Overlay = styled.div`
 position: fixed;
@@ -49,6 +51,8 @@ font-family: 'Pacifico', cursive;
 
 export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
 
+    const counter = useCount();
+    
     const closeModal = e => {
         if(e.target.id === 'overlay') {
             setOpenItem(null);
@@ -73,7 +77,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
                     <div> {openItem.name}</div>
                     <div> {openItem.price}</div>
                 </HeaderContent>      
-                <CountItem/>
+                <CountItem counter={counter}/>
                 <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>
             </Content>
         </Modal>
