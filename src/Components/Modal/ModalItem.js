@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { ButtonCheckout } from "./ButtonCheckout";
+import { ButtonCheckout } from "../Styled/ButtonCheckout";
+import { CountItem }  from "./CountItem";
 
 const Overlay = styled.div`
 position: fixed;
@@ -72,6 +73,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
                     <div> {openItem.name}</div>
                     <div> {openItem.price}</div>
                 </HeaderContent>      
+                <CountItem/>
                 <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>
             </Content>
         </Modal>
