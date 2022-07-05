@@ -53,6 +53,8 @@ const TotalPriceItem = styled.div`
     justify-content: space-between;
 `;
 
+export const totalPriceItems = order => order.price * order.count;
+
 export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
 
     const counter = useCount();
@@ -67,8 +69,6 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
         ...openItem,
         count: counter.count
     };
-
-    const totalPriceItem = order => order.price * order.count;
 
     const addToOrder = () => {
         setOrders([...orders, order])
@@ -87,7 +87,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
                 <CountItem {...counter}/>
                 <TotalPriceItem>
                     <span>Цена:</span>
-                    <span>{totalPriceItem(order).toLocaleString('ru-Ru',
+                    <span>{totalPriceItems(order).toLocaleString('ru-Ru',
                         {style: 'currency', currency: 'RUB'})}</span>
                 </TotalPriceItem>
                 <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>
